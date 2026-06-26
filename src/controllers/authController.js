@@ -138,10 +138,10 @@ const gantiPassword = async (req, res) => {
     const user = rows[0]
 
     console.log("===== LOGIN DEBUG =====");
-    console.log("User dari DB:", user);
-    console.log("Username input:", username);
-    console.log("Password input:", password);
-    console.log("Hash di DB:", user.password);
+    console.log("User:", user);
+    console.log("Keys:", Object.keys(user));
+    console.log("user.password:", user.password);
+    console.log("user.PASSWORD:", user.PASSWORD);
 
     const isMatch = await bcrypt.compare(password, user.password);
 
